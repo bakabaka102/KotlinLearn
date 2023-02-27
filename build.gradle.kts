@@ -13,6 +13,15 @@ repositories {
 }
 
 dependencies {
+
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0")
+
+    // Because RxAndroid releases are few and far between, it is recommended you also
+    // explicitly depend on RxJava's latest version for bug fixes and new features.
+    // see https://github.com/ReactiveX/RxJava/releases for latest 3.x.x version
+    implementation ("io.reactivex.rxjava3:rxjava:3.0.2")
+    implementation ("io.reactivex.rxjava3:rxkotlin:3.0.0")
+
     testImplementation(kotlin("test"))
 }
 
