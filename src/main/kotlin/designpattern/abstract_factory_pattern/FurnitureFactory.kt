@@ -12,6 +12,25 @@ interface Chair {
     fun create()
 }
 
+class PlasticFactory : FurnitureAbstractFactory() {
+    override fun createChair(): Chair = PlasticChair()
+
+    override fun createTable(): Table = PlasticTable()
+
+}
+
+class WoodFactory : FurnitureAbstractFactory() {
+    override fun createChair(): Chair = WoodChair()
+
+    override fun createTable(): Table = WoodTable()
+
+}
+
+abstract class FurnitureAbstractFactory {
+    abstract fun createChair(): Chair
+    abstract fun createTable(): Table
+}
+
 class PlasticChair : Chair {
     override fun create() {
         println("Create PlasticChair")
@@ -46,28 +65,10 @@ object FurnitureFactory {
     }
 }
 
-
-class PlasticFactory : FurnitureAbstractFactory() {
-    override fun createChair(): Chair = PlasticChair()
-
-    override fun createTable(): Table = PlasticTable()
-
-}
-
-class WoodFactory : FurnitureAbstractFactory() {
-    override fun createChair(): Chair = WoodChair()
-
-    override fun createTable(): Table = WoodTable()
-
-}
-
-abstract class FurnitureAbstractFactory {
-    abstract fun createChair(): Chair
-    abstract fun createTable(): Table
-}
-
 fun main() {
-    val furnitureAbstractFactory = FurnitureFactory.getFactory(MaterialType.PLASTIC)
-    val chairPlastic = furnitureAbstractFactory.createChair()
+    val plasticFactory = FurnitureFactory.getFactory(MaterialType.PLASTIC)
+    val chairPlastic: Chair = plasticFactory.createChair()
     chairPlastic.create()
+    val tablePlastic: Table = plasticFactory.createTable()
+    tablePlastic.create()
 }
