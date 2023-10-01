@@ -1,4 +1,4 @@
-package designpattern.abstract_factory_pattern
+package designpattern.creational_patterns.abstract_factory_pattern
 
 enum class MaterialType {
     PLASTIC, WOOD,

@@ -1,4 +1,4 @@
-package designpattern.builder_pattern
+package designpattern.creational_patterns.builder_pattern
 
 class CarBuilder : IBuilder {
 
