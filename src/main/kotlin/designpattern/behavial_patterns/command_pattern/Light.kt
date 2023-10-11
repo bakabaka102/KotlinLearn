@@ -15,9 +15,7 @@ data class Light(var status: Boolean? = null) {
     }
 }
 
-class RemoteControl() {
-
-    private var iCommand: ICommand? = null
+class RemoteControl(private var iCommand: ICommand? = null) {
 
     fun setCommand(iCommand: ICommand) {
         this.iCommand = iCommand

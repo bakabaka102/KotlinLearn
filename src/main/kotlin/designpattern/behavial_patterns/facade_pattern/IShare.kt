@@ -7,9 +7,8 @@ interface IShare {
     fun share()
 }
 
-class FaceBookShare : IShare {
+class FaceBookShare(private var message: String = "") : IShare {
 
-    private var message = ""
     override fun setMessage(message: String) {
         this.message = message
     }
@@ -19,9 +18,8 @@ class FaceBookShare : IShare {
     }
 }
 
-class TwitterShare : IShare {
+class TwitterShare(private var message: String = "") : IShare {
 
-    private var message = ""
     override fun setMessage(message: String) {
         this.message = message
     }
