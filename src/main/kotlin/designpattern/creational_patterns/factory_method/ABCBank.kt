@@ -1,4 +1,4 @@
-package designpattern.factory_method
+package designpattern.creational_patterns.factory_method
 
 class ABCBank : Bank {
     override fun nameBank(): String {
