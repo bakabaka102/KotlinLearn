@@ -187,8 +187,62 @@ fun gradingStudents(grades: Array<Int>): Array<Int> {
 
 
 fun countApplesAndOranges(s: Int, t: Int, a: Int, b: Int, apples: Array<Int>, oranges: Array<Int>): Unit {
+    /*val `in`: Scanner = Scanner(System.`in`)
+    val m: Int = `in`.nextInt()
+    val n: Int = `in`.nextInt()
+    val apple = IntArray(m)
+    for (apple_i in 0 until m) {
+        apple[apple_i] = `in`.nextInt() + a
+    }
+    val orange = IntArray(n)
+    for (orange_i in 0 until n) {
+        orange[orange_i] = `in`.nextInt() + b
+    }*/
+    var numApples = 0
+    var numOranges = 0
+    for (i in apples.indices) {
+        val temp = a + apples[i]
+        if (temp in s..t + 1) {
+            numApples += 1
+        }
+    }
+    for (i in oranges) {
+        val temp = b + oranges[i]
+        if (temp in s..t + 1) {
+            numOranges += 1
+        }
+    }
+    println(numApples)
+    println(numOranges)
+}
 
+fun kangaroo(x1: Int, v1: Int, x2: Int, v2: Int): String {
+    val vDiff = v1 - v2
+    if (vDiff <= 0) {
+        return "NO"
+    }
+    val xDiff = x1 - x2
+    return if (xDiff % vDiff == 0) {
+        "YES"
+    } else {
+        "NO"
+    }
+}
 
+fun countingValleys(steps: Int, path: String): Int {
+    var walk = 0
+    var count = 0
+    path.forEach {
+        if (it == 'D') {
+            walk--
+        } else {
+            if (walk == -1) {
+                count++
+            }
+            walk++
+        }
+    }
+    return count
 }
 
 fun main() {
