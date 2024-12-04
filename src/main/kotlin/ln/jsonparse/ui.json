@@ -1,0 +1,349 @@
+{
+  "drawerMenu": [
+    {
+      "type": "Title",
+      "name": "operations_menu"
+    },
+    {
+      "type": "Item",
+      "menuId": "Reports",
+      "icon": "ic_menu_reports",
+      "name": "reports_menu",
+      "action": "reviewReports"
+    },
+    {
+      "type": "Item",
+      "menuId": "ReprintReceipt",
+      "name": "reprint_receipt_menu",
+      "icon": "ic_menu_reprint_receipt",
+      "action": "reprintReceipt"
+    },
+    {
+      "type": "Item",
+      "menuId": "Settlement",
+      "name": "settlement",
+      "icon": "ic_menu_settlement",
+      "action": "doSettlement"
+    },
+    {
+      "type": "Title",
+      "name": "admin_menu"
+    },
+    {
+      "type": "PasswordProtectedMenuItem",
+      "menuId": "ClerkNode",
+      "name": "",
+      "icon": "ic_menu_clerk",
+      "action": "enterPasswordToChooseItem"
+    },
+    {
+      "type": "PasswordProtectedMenuItem",
+      "menuId": "SetupNode",
+      "name": "setup_menu",
+      "icon": "ic_menu_setup",
+      "action": "enterPasswordToChooseItem"
+    },
+    {
+      "type": "PasswordProtectedMenuNode",
+      "name": "batch_menu",
+      "menuId": "BatchNode",
+      "icon": "ic_menu_batch",
+      "action": "enterPasswordToChooseNode",
+      "menuItems": [
+        {
+          "type": "Item",
+          "name": "clear_batch",
+          "menuId": "BatchDelete",
+          "action": "deleteBatch"
+        },
+        {
+          "type": "Item",
+          "menuId": "BatchDeleteReversal",
+          "name": "delete_reversal",
+          "action": "deleteReversal"
+        }
+      ]
+    },
+    {
+      "type": "PasswordProtectedMenuNode",
+      "menuId": "SecuritySettingNode",
+      "name": "security",
+      "icon": "ic_menu_security_settings",
+      "action": "enterPasswordToChooseNode",
+      "menuItems": [
+        {
+          "type": "Item",
+          "menuId": "PwParams",
+          "name": "PW parameters",
+          "action": "Review Password Parameters"
+        },
+        {
+          "type": "Item",
+          "menuId": "AddUser",
+          "name": "menu_add_user",
+          "action": "addUser"
+        },
+        {
+          "type": "Item",
+          "menuId": "ChangePassword",
+          "name": "change_password_menu",
+          "action": "changePassword"
+        },
+        {
+          "type": "Item",
+          "menuId": "DeleteUser",
+          "name": "menu_delete_user",
+          "action": "deleteUser"
+        }
+      ]
+    },
+    {
+      "type": "PasswordProtectedMenuNode",
+      "menuId": "MaintenanceNode",
+      "name": "maintenance_menu",
+      "icon": "ic_menu_terminal_mantenance",
+      "action": "enterPasswordToChooseNode",
+      "menuItems": [
+        {
+          "type": "Item",
+          "menuId": "CommunicationTest",
+          "name": "communication_test",
+          "action": "testCommunication"
+        },
+        {
+          "type": "Item",
+          "menuId": "HcpConnectivity",
+          "name": "hcp_connectivity",
+          "action": "HCP Connectivity"
+        },
+        {
+          "type": "Item",
+          "menuId": "InstallerMenu",
+          "name": "installer_menu",
+          "action": "Install"
+        },
+        {
+          "type": "Item",
+          "menuId": "Initialization",
+          "name": "INITIALIZATION_REQUEST",
+          "action": "Initialize Request"
+        }
+      ]
+    },
+    {
+      "type": "Title"
+    },
+    {
+      "type": "Item",
+      "menuId": "TerminalInformation",
+      "name": "terminal_info",
+      "icon": "ic_menu_terminal_information",
+      "action": "reviewTerminalInformation"
+    }
+  ],
+  "setup": {
+    "credit": [
+      {
+        "type": "Switch",
+        "title": "last_4_digit_enabled",
+        "default": "false",
+        "action": "toggleLast4Digit"
+      },
+      {
+        "type": "Switch",
+        "title": "card_present",
+        "default": "false",
+        "action": "toggleCardPresent"
+      },
+      {
+        "type": "DropDown",
+        "title": "moto_cap",
+        "dropDownValues": [
+          "off",
+          "moto_only_setup",
+          "ecomm_only_setup",
+          "both"
+        ],
+        "default": "Off",
+        "action": "selectMotoOption"
+      },
+      {
+        "type": "InputNumeric",
+        "title": "pre_auth_max_age",
+        "default": "30",
+        "action": "inputPreAuthMaxAge"
+      }
+    ],
+    "debit": [
+      {
+        "type": "Switch",
+        "title": "last_4_digit_enabled",
+        "default": "false",
+        "action": "toggleDebitLast4Digit"
+      },
+      {
+        "type": "InputNumeric",
+        "title": "cashback_limit",
+        "default": "99999999900",
+        "action": "inputCashBackLimit"
+      }
+    ],
+    "tip": [
+      {
+        "type": "DropDown",
+        "title": "tip_processing_mode",
+        "dropDownValues": [
+          "disable",
+          "prompt_and_print",
+          "print_only_setup"
+        ],
+        "default": "Off",
+        "action": "selectTipProcessing"
+      }
+    ],
+    "prompt": [
+      {
+        "type": "DropDown",
+        "title": "invoice_type_setup",
+        "dropDownValues": [
+          "off",
+          "invoice_setup",
+          "purchase_order_setup",
+          "ticket_setup"
+        ],
+        "default": "Off",
+        "action": "selectInvoiceType"
+      },
+      {
+        "type": "Switch",
+        "title": "partial_auth_setup",
+        "default": "false",
+        "action": "togglePartialAuth"
+      }
+    ],
+    "merchant": [
+      {
+        "type": "InputText",
+        "title": "receipt_header_1_setup",
+        "default": "receipt_header_line_1_setup",
+        "action": "inputReceiptHeader1"
+      },
+      {
+        "type": "InputText",
+        "title": "receipt_header_2_setup",
+        "default": "receipt_header_line_2_setup",
+        "action": "inputReceiptHeader2"
+      }
+    ],
+    "header": [
+      {
+        "type": "InputText",
+        "title": "receipt_header_3_setup",
+        "default": "receipt_header_line_3_setup",
+        "action": "inputReceiptHeader3"
+      },
+      {
+        "type": "InputText",
+        "title": "receipt_header_4_setup",
+        "default": "receipt_header_line_4_setup",
+        "action": "inputReceiptHeader4"
+      },
+      {
+        "type": "InputText",
+        "title": "receipt_header_5_setup",
+        "default": "receipt_header_line_5_setup",
+        "action": "inputReceiptHeader5"
+      }
+    ],
+    "report": [
+      {
+        "type": "Switch",
+        "title": "error_receipt_setup",
+        "default": "false",
+        "action": "toggleErrorReceipt"
+      }
+    ],
+    "demo": [
+      {
+        "type": "Switch",
+        "title": "demo_mode_enabled_setup",
+        "default": "false",
+        "action": "toggleDemoMode"
+      }
+    ],
+    "downloadOnly": [
+      {
+        "type": "InputText",
+        "title": "receipt_ebt_endorse_1_setup",
+        "default": "receipt_ebt_endorse_line_1_setup",
+        "action": "inputReceiptEbtEndorse1"
+      },
+      {
+        "type": "InputText",
+        "title": "receipt_ebt_endorse_2_setup",
+        "default": "receipt_ebt_endorse_line_2_setup",
+        "action": "inputReceiptEbtEndorse2"
+      },
+      {
+        "type": "InputText",
+        "title": "receipt_ebt_endorse_3_setup",
+        "default": "receipt_ebt_endorse_line_3_setup",
+        "action": "inputReceiptEbtEndorse3"
+      },
+      {
+        "type": "InputText",
+        "title": "receipt_ebt_endorse_4_setup",
+        "default": "receipt_ebt_endorse_line_4_setup",
+        "action": "inputReceiptEbtEndorse4"
+      },
+      {
+        "type": "InputText",
+        "title": "receipt_ebt_endorse_fr_1_setup",
+        "default": "receipt_ebt_endorse_line_fr_1_setup",
+        "action": "inputReceiptEbtEndorseFr1"
+      },
+      {
+        "type": "InputText",
+        "title": "receipt_ebt_endorse_fr_2_setup",
+        "default": "receipt_ebt_endorse_line_fr_2_setup",
+        "action": "inputReceiptEbtEndorseFr2"
+      },
+      {
+        "type": "InputText",
+        "title": "receipt_ebt_endorse_fr_3_setup",
+        "default": "receipt_ebt_endorse_line_fr_3_setup",
+        "action": "inputReceiptEbtEndorseFr3"
+      },
+      {
+        "type": "InputText",
+        "title": "receipt_ebt_endorse_fr_4_setup",
+        "default": "receipt_ebt_endorse_line_fr_4_setup",
+        "action": "inputReceiptEbtEndorseFr4"
+      },
+      {
+        "type": "InputText",
+        "title": "receipt_ebt_endorse_sp_1_setup",
+        "default": "receipt_ebt_endorse_line_sp_1_setup",
+        "action": "inputReceiptEbtEndorseSp1"
+      },
+      {
+        "type": "InputText",
+        "title": "receipt_ebt_endorse_sp_2_setup",
+        "default": "receipt_ebt_endorse_line_sp_2_setup",
+        "action": "inputReceiptEbtEndorseSp2"
+      },
+      {
+        "type": "InputText",
+        "title": "receipt_ebt_endorse_sp_3_setup",
+        "default": "receipt_ebt_endorse_line_sp_3_setup",
+        "action": "inputReceiptEbtEndorseSp3"
+      },
+      {
+        "type": "InputText",
+        "title": "receipt_ebt_endorse_sp_4_setup",
+        "default": "receipt_ebt_endorse_line_sp_4_setup",
+        "action": "inputReceiptEbtEndorseSp4"
+      }
+    ]
+  }
+}

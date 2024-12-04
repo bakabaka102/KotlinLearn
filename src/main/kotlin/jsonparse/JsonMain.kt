@@ -38,7 +38,6 @@ data class Tutorial(
 data class Person(val name: String, val age: Int, val messages: List<String>)
 
 fun main() {
-    val theGson = Gson()
     /*val file = FileReader("src/main/kotlin/jsonparse/file_json.json")
     val filePerson = FileReader("src/main/kotlin/jsonparse/file_json_.json")
     *//*val customer = theGson.fromJson(file, Array<Array<Customer>>::class.java).toList().toList().toString()
