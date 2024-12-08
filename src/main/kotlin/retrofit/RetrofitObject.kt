@@ -53,22 +53,13 @@ interface ApiService {
     @GET("jokes/random")
     fun singleRandomData(): Single<RandomObject>
 
-}
+    @GET("users/")
+    fun getUsersOriginRetrofit(): Call<List<User>>
 
-@Serializable
-data class RandomObject(
-    @SerialName("categories")
-    var categories: ArrayList<String> = arrayListOf(),
-    @SerialName("created_at")
-    var createdAt: String? = null,
-    @SerialName("icon_url")
-    var iconUrl: String? = null,
-    @SerialName("id")
-    var id: String? = null,
-    @SerialName("updated_at")
-    var updatedAt: String? = null,
-    @SerialName("url")
-    var url: String? = null,
-    @SerialName("value")
-    var value: String? = null
-)
+    @GET("users/")
+    fun getUsers(): Single<List<User>>
+
+    @GET("users/{id}")
+    fun getUserById(): Single<User>
+
+}
